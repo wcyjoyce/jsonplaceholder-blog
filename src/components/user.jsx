@@ -9,8 +9,7 @@ class User extends Component {
   }
 
   render() {
-    const user = this.props.users.find(user => user.id === this.props.userId);
-
+    const { user } = this.props;
     if (!user) {
       return null;
     } else {
@@ -19,8 +18,8 @@ class User extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return { users: state.users };
+function mapStateToProps(state, ownProps) {
+  return { user: state.users.find(user => user.id === ownProps.userId) };
 }
 
 export default connect(mapStateToProps, { fetchUser })(User);
