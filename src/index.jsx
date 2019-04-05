@@ -8,9 +8,11 @@ import App from "./components/app";
 import "../assets/stylesheets/application.scss";
 
 import postsReducer from "./reducers/posts_reducer";
+import usersReducer from "./reducers/users_reducer";
 
 const reducers = combineReducers({
-  posts: postsReducer
+  posts: postsReducer,
+  users: usersReducer
 });
 
 ReactDOM.render(

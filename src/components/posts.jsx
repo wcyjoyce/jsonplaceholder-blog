@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import { fetchPosts } from "../actions";
+import User from "./user.jsx";
 
 class Posts extends Component {
   componentDidMount() {
@@ -12,9 +13,9 @@ class Posts extends Component {
     return this.props.posts.map((post) => {
       return (
         <div className="post" key={post.id}>
-          <i className="large middle aligned icon user"></i>
           <div className="content">
             <h3>{post.title}</h3>
+            <h5><User userId={post.userId} /></h5>
             <p>{post.body}</p>
           </div>
         </div>
@@ -25,7 +26,7 @@ class Posts extends Component {
   render() {
     return (
       <div className="posts">
-        <h1>Posts</h1>
+        <h1>JSONPlaceholder // Posts</h1>
         {this.renderList()}
       </div>
     );
