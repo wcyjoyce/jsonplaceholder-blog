@@ -1,9 +1,11 @@
 import React from "react";
 
+import Posts from "./posts.jsx";
+
 const App = () => {
   return (
     <div className="app">
-      <p>React + Redux starter</p>
+      <Posts />
     </div>
   );
 };
