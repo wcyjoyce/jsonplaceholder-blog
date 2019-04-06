@@ -8,10 +8,18 @@ export const fetchPostsAndUsers = () => async (dispatch, getState) => {
   // 3) Iterate over unique userId's
   // 4) Call fetchUser() with each unique userId
 
-  await dispatch(fetchPosts()); // invokes fetchPosts() function and returns payload; "await" ensures that jsonplaceholder.get() is executed before returning payload
-  const fetchedPosts = getState().posts; // returns list of posts fetched
-  const userIds = _.uniq(_.map(fetchedPosts, "userId")) // finds unique userId's of fetchedPosts
-  userIds.forEach(id => dispatch(fetchUser(id)));
+  // await dispatch(fetchPosts()); // invokes fetchPosts() function and returns payload; "await" ensures that jsonplaceholder.get() is executed before returning payload
+  // const fetchedPosts = getState().posts; // returns list of posts fetched
+  // const userIds = _.uniq(_.map(fetchedPosts, "userId")) // finds unique userId's of fetchedPosts
+  // userIds.forEach(id => dispatch(fetchUser(id)));
+
+  // Refactoring with chaining function in Lodash
+  await dispatch(fetchPosts());
+  _.chain(getState().posts)
+    .map("userId")
+    .uniq()
+    .forEach(id => dispatch(fetchUser(id)))
+    .value(); // executes chain function
 };
 
 // export function fetchPosts() {
