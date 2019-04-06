@@ -1,7 +1,34 @@
 body {
-  font-family: Helvetica;
+  background: white;
 }
+
 .app {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: 25px;
+
+  h1 {
+    margin: 0px;
+    padding: 15px 0px;
+    font-weight: bold;
+    // background: white;
+    // top: 25px;
+    // position: sticky;
+  }
+}
+
+.post {
+  border-bottom: 1px solid #EFEFEF;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  h3 {
+    margin: 10px 0px;
+  }
+
+  h5 {
+    font-size: 12px;
+    font-weight: bold;
+    color: #909090;
+  }
 }
