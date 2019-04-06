@@ -1,11 +1,3 @@
-# redux-boilerplate
+# JSONPlaceholder Blog
 
-Simple React + Redux starter with the following config:
-
-- React, ReactDOM
-- Redux, React-Redux
-- Webpack 3
-- Babel with es2015 and react presets
-- Bootstrap (css only, loaded from a cdn in `index.html`)
-- work with `.js` or `.jsx` files
-- main `application.scss` stylesheet is imported in `index.js` as a module to enjoy hot reloading
+This is a simple blog app that I created with React and Redux as part of [Stephen Grider's](https://www.udemy.com/react-redux/) Modern React with Redux course on [Udemy](https://www.udemy.com/). Supported by [JSONPlaceholder's API](http://jsonplaceholder.typicode.com/), it displays a list of posts created by a list of users.
